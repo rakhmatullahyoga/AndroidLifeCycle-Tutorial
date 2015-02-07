@@ -54,10 +54,7 @@ public class TracerActivity extends Activity {
     private void notify(String methodName) {
         String name = this.getClass().getName();
         String[] strings = name.split("\\.");
-        Notification noti = new Notification.Builder(this)
-                .setContentTitle(methodName + " " + strings[strings.length - 1]).setAutoCancel(true)
-                .setSmallIcon(R.drawable.ic_launcher)
-                .setContentText(name).build();
+        Notification noti = new Notification.Builder(this).setContentTitle(methodName + " " + strings[strings.length - 1]).setAutoCancel(true).setSmallIcon(R.drawable.ic_launcher).setContentText(name).build();
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify((int) System.currentTimeMillis(), noti);
     }
